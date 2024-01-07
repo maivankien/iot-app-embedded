@@ -24,10 +24,9 @@ void connectToMQTT()
         }
         else
         {
-            Serial.print("Failed, rc=");
-            Serial.print(client.state());
-            Serial.println("Retrying in 3 seconds...");
+            Serial.printf("Failed, rc=%d. Retrying in 3 seconds...\n", client.state());
             delay(3000);
         }
     }
+    client.publish("home/device/connected", NULL);
 }

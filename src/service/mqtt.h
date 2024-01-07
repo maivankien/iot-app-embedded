@@ -3,11 +3,8 @@
 
 void handleMQTTDevice(JsonDocument doc)
 {
-    const char *sensor = doc["sensor"];
-    int value = doc["value"];
+    int pin = doc["pin"];
+    int value = doc["state"];
 
-    Serial.print("Sensor: ");
-    Serial.println(sensor);
-    Serial.print("Value: ");
-    Serial.println(value);
+    digitalWrite(pin, value);
 }
