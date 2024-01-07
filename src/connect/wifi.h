@@ -1,8 +1,8 @@
 #include <ESP8266WiFi.h>
-// #include "wifi.h"
+#include "config/config.h"
 
 void connectToWiFi() {
-    WiFi.begin("WIFI FREE", "khongcho");
+    WiFi.begin(ssid, password);
 
     while (WiFi.status() != WL_CONNECTED) {
         delay(1000);
