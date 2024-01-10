@@ -1,4 +1,4 @@
-#include <ESP8266WiFi.h>
+#include <WiFi.h>
 #include <PubSubClient.h>
 #include "config/config.h"
 #include "common/mqtt.h"
@@ -14,7 +14,7 @@ void connectToMQTT()
     while (!client.connected())
     {
         Serial.println("Attempting MQTT connection...");
-        if (client.connect("ESP8266Client", mqttUser, mqttPassword))
+        if (client.connect("ESP32Client", mqttUser, mqttPassword))
         {
             Serial.println("Connected to MQTT broker");
             for (int i = 0; i < topicSubscribesSize; i++)
