@@ -1,5 +1,8 @@
-#include <ArduinoJson.h>
+#pragma once
 
+#include <ArduinoJson.h>
+#include "connect/mqtt.h"
+#include "common/pzem.h"
 
 void handleMQTTDevice(JsonDocument doc)
 {

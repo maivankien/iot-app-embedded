@@ -1,11 +1,8 @@
-#include <vector>
 #include <connect/wifi.h>
-#include <connect/mqtt.h>
+#include "connect/mqtt.h"
 #include <common/pinMode.h>
-#include <service/send.h>
+#include <service/queue.h>
 #include <sensor/temperature.h>
-
-std::vector<JsonDocument> messageQueue;
 
 
 void setup()
@@ -29,11 +26,9 @@ void loop()
     }
 
     static unsigned long lastSendTime = 0;
-    if (millis() / 100 - lastSendTime >= 30)
+    if (millis() / 100 - lastSendTime >= 10)
     {
-        JsonDocument doc = getTemperatureAndHumidity();
-        
-        pushQueue(doc, messageQueue);
+        pushElectricalPowerQueue();
         lastSendTime = millis() / 100;
     }
 }

@@ -1,3 +1,5 @@
+#pragma once
+
 #include <WiFi.h>
 #include "config/config.h"
 
@@ -6,6 +8,7 @@ void connectToWiFi() {
 
     while (WiFi.status() != WL_CONNECTED) {
         delay(1000);
+        Serial.println(WiFi.status());
         Serial.println("Connecting to WiFi...");
     }
 

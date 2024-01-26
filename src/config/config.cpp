@@ -10,5 +10,5 @@ const char *mqttUser = "admin";
 const char *mqttPassword = "123456";
 const char *mqttBroker = "192.168.1.9";
 
-const int topicSubscribesSize = 2;
-const char *topicSubscribes[] = {"home/device", "mqtt/topic"};
+const int topicSubscribesSize = 3;
+const char *topicSubscribes[] = {"home/device", "home/energy/getDay", "home/energy/getMonth"};

@@ -1,8 +1,14 @@
+#pragma once
+
 #include <vector>
 #include <ArduinoJson.h>
+#include "common/pzem.h"
 
-void pushQueue(JsonDocument doc, std::vector<JsonDocument> &messageQueue)
+std::vector<JsonDocument> messageQueue;
+
+void pushElectricalPowerQueue()
 {
+    JsonDocument doc = getElectricalPower();
     messageQueue.push_back(doc);
 }
 
