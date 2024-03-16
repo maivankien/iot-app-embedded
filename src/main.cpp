@@ -2,7 +2,6 @@
 #include "connect/mqtt.h"
 #include <common/pinMode.h>
 #include <service/queue.h>
-#include <sensor/temperature.h>
 
 
 void setup()

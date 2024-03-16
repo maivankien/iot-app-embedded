@@ -2,7 +2,7 @@
 
 #include <Arduino.h>
 
-int pins[] = {16, 5, 4};
+int pins[] = {2, 4, 15, 16, 12, 13, 14, 27};
 int pinCount = sizeof(pins) / sizeof(pins[0]);
 
 void setUpPinMode()
